@@ -30,6 +30,7 @@ Now disable validation mode with `--holdout_off` and run 14 passes:
 	vw -b 29 --loss_function logistic -c --passes 14 -d train.vw -P 1e5 --holdout_off -f model
 	vw -t -i model -d test.vw -p predicshuns.txt
 	
+	vw -b 29 --loss_function logistic --ngram 2 --skips 1 -c --passes 14 -d train.vw -P 1e5 --holdout_off -f model
 	python predict.py predicshuns.txt predicshuns_for_kaggle.txt
 	
 That's it. If you're doing validation, here's how to get scores:
